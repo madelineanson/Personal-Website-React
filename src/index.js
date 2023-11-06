@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserList from './components/UserList';
+import App from './App';
 
 const usersData = [
   {
@@ -18,6 +18,6 @@ const usersData = [
 ];
 
 ReactDOM.render(
-  <UserList users={usersData} />,
+  <App />,
   document.getElementById('root')
 );
