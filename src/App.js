@@ -1,6 +1,11 @@
 import './App.css';
 import UserList from './components/ProductList';
 import Intro from './intro';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import About from './components/About';
+import Portfolio from './components/Portfolio';
+import Navbar from './components/Navbar';
+
 const usersData = [
   {
     "id": 1,
@@ -20,7 +25,14 @@ function App() {
   return (
     <>
     <Intro></Intro>
-    <UserList users={usersData}/>
+    <Router>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path = '/about' element={<About/>}/>
+        <Route path = '/portfolio' element={<Portfolio/>}/>
+      </Routes>
+      <UserList users={usersData}/>
+    </Router>
     </>
   );
 }
